@@ -1,0 +1,112 @@
+
+# distribute_mean = false is faster if your model does vertical
+#                   conversions but takes more memory
+# distribute_mean = true is slower but takes much less memory and
+#                   may allow you to run at all compared to not
+#                   for very large state vectors
+
+# enabling sampling error correction is generally beneficial
+# the default file is in assimilation_code/programs/gen_sampling_err_table/work
+
+# With a deterministic filter (filter_kind == 1 or 8)
+# and a deterministic inflation (filter_nml:inf_deterministic == .true.)
+# sort_obs_inc is not needed and is expensive. Should be .false.
+
+# specify special localization items in the same order
+# in both lists, the same number of items
+
+&assim_tools_nml
+   filter_kind                       = 1
+   cutoff                            = 0.2
+   distribute_mean                   = .false.
+   sort_obs_inc                      = .false.
+   spread_restoration                = .false.
+   sampling_error_correction         = .false.
+   adaptive_localization_threshold   = -1
+   adaptive_cutoff_floor             = 0.0
+   output_localization_diagnostics   = .false.
+   localization_diagnostics_file     = 'localization_diagnostics'
+   print_every_nth_obs               = 0
+   rectangular_quadrature            = .true.
+   gaussian_likelihood_tails         = .false.
+   close_obs_caching                 = .true.
+   allow_missing_in_clm              = .false.
+   adjust_obs_impact                 = .false.
+   obs_impact_filename               = ""
+   allow_any_impact_values           = .false.
+   convert_all_obs_verticals_first   = .true.
+   convert_all_state_verticals_first = .false.
+   special_localization_obs_types    = 'null'
+   special_localization_cutoffs      = -888888.0
+  /
+
+&cov_cutoff_nml
+   select_localization = 1  /
+
+&quality_control_nml
+   input_qc_threshold          = 3
+   outlier_threshold           = -1
+   enable_special_outlier_code = .false.
+  /
+
+&reg_factor_nml
+   select_regression    = 1,
+   input_reg_file       = "time_mean_reg",
+   save_reg_diagnostics = .false.,
+   reg_diagnostics_file = "reg_diagnostics"  /
+
+&state_vector_io_nml
+   buffer_state_io         = .false.
+   single_precision_output = .false.
+/
+&obs_kind_nml
+   assimilate_these_obs_types          = 'null',
+   evaluate_these_obs_types            = 'null'  
+   use_precomputed_FOs_these_obs_types = 'null'
+/
+
+&obs_sequence_nml
+   write_binary_obs_sequence = .false.
+   read_binary_file_format   = 'native'
+  /
+
+&ensemble_manager_nml
+   layout                      = 1
+   tasks_per_node              = 1
+   communication_configuration = 1
+   debug                       = .false.
+ /
+
+&utilities_nml
+   TERMLEVEL      = 2
+   logfilename    = 'dart_log.out'
+   nmlfilename    = 'dart_log.nml'
+   module_details = .true.
+   print_debug    = .false.
+   write_nml      = 'file'
+  /
+
+
+# different methods to compute 'distance' from mean:
+#  1 = simple absolute difference
+#  2 = normalized absolute difference
+#  3 = simple rmse difference
+#  4 = normalized rmse difference
+
+&closest_member_tool_nml
+   input_restart_file_list   = 'null',
+   mean_restart_file_list    = 'null',
+   output_file_name       = 'closest_restart',
+   ens_size               = 20,
+   single_restart_file_in = .false.,
+   difference_method      = 4,
+   use_only_kinds         = '',
+ /
+
+&model_nml
+   model_size        = 40,
+   forcing           = 8.00,
+   delta_t           = 0.05,
+   time_step_days    = 0,
+   time_step_seconds = 3600  /
+

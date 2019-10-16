@@ -1,0 +1,18 @@
+#!/bin/csh
+#
+# DART software - Copyright UCAR. This open source software is provided
+# by UCAR, "as is", without charge, subject to all terms of use at
+# http://www.image.ucar.edu/DAReS/DART/DART_download
+#
+# DART $Id: mkmf_test_exp 11864 2017-08-02 19:40:28Z nancy@ucar.edu $
+
+../../../build_templates/mkmf -p test_exp -t ../../../build_templates/mkmf.template   \
+ -a "../../../" path_names_test_exp
+
+exit $status
+
+# <next few lines under version control, do not edit>
+# $URL: https://svn-dares-dart.cgd.ucar.edu/DART/releases/Manhattan/developer_tests/random_seq/test/mkmf_test_exp $
+# $Revision: 11864 $
+# $Date: 2017-08-02 13:40:28 -0600 (Wed, 02 Aug 2017) $
+

@@ -1,0 +1,14 @@
+
+&obs_loop_nml
+   filename_in  = ''
+   filename_out = '' 
+   print_only   = .false.
+   calendar     = 'Gregorian'
+   /
+
+&utilities_nml
+ /
+
+&obs_sequence_nml
+ /
+

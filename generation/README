@@ -1,0 +1,3 @@
+Note - This directory contains a stripped-down version of the DART.graph_generation code used to generate, serially, a graph for later coloring, per the 2018 project in ASAP
+
+I've removed several documention directories that weren't important, as well as a few observations ones, just to make this more manageable

@@ -1,0 +1,82 @@
+&location_nml
+   horiz_dist_only                 = .true.
+   vert_normalization_pressure     = 100000.0
+   vert_normalization_height       = 10000.0
+   vert_normalization_level        = 20.0
+   vert_normalization_scale_height = 5.0
+   approximate_distance            = .false.
+   nlon                            = 71
+   nlat                            = 36
+   output_box_info                 = .false.
+   print_box_level                 = 0
+   special_vert_normalization_obs_types     = 'null'
+   special_vert_normalization_pressures     = -888888.0
+   special_vert_normalization_heights       = -888888.0
+   special_vert_normalization_levels        = -888888.0
+   special_vert_normalization_scale_heights = -888888.0
+  /
+
+&cov_cutoff_nml
+   select_localization = 1  /
+
+&state_vector_io_nml
+   buffer_state_io         = .false.
+   single_precision_output = .false.
+/
+&obs_kind_nml
+   assimilate_these_obs_types          = 'null',
+   evaluate_these_obs_types            = 'null'  
+   use_precomputed_FOs_these_obs_types = 'null'
+/
+
+&obs_sequence_nml
+   write_binary_obs_sequence = .false.
+   read_binary_file_format   = 'native'
+  /
+
+&ensemble_manager_nml
+   layout                      = 1
+   tasks_per_node              = 1
+   communication_configuration = 1
+   debug                       = .false.
+ /
+
+&utilities_nml
+   TERMLEVEL      = 2
+   logfilename    = 'dart_log.out'
+   nmlfilename    = 'dart_log.nml'
+   module_details = .true.
+   print_debug    = .false.
+   write_nml      = 'file'
+  /
+
+&model_nml
+   model_version             = '4.0'
+   model_config_file         = 'caminput.nc'
+   cam_phis                  = 'cam_phis.nc'
+   cs_grid_file              = 'SEMapping_cs_grid.nc'
+   homme_map_file            = 'SEMapping.nc'
+   state_num_0d              = 0
+   state_num_1d              = 0
+   state_num_2d              = 0
+   state_num_3d              = 0
+   state_names_0d            = ''
+   state_names_1d            = ''
+   state_names_2d            = ''
+   state_names_3d            = ''
+   which_vert_1d             = -2 
+   which_vert_2d             = -1  
+   which_vert_3d             = 1  
+   pert_names                = ''
+   pert_sd                   = -888888.0
+   pert_base_vals            = -888888.0
+   highest_obs_pressure_Pa   = 1000.0
+   highest_state_pressure_Pa = 9400.0
+   vert_coord                = 'pressure'
+   max_obs_lat_degree        = 90.0
+   Time_step_seconds         = 21600
+   Time_step_days            = 0
+   impact_only_same_kind     = ' '
+   print_details             = .false.
+   /
+

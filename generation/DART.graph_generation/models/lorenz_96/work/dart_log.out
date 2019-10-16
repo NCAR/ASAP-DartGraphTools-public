@@ -1,0 +1,25 @@
+ 
+ --------------------------------------
+ Starting ... at YYYY MM DD HH MM SS = 
+                 2017  8 10 13 16 24
+ Program preprocess
+ --------------------------------------
+ 
+ set_nml_output Echo NML values to log file only
+ Path names of default obs_def and obs_kind modules
+ ../../../observations/forward_operators/DEFAULT_obs_def_mod.F90
+ ../../../assimilation_code/modules/observations/DEFAULT_obs_kind_mod.F90
+ Path names of output obs_def and obs_kind modules
+ ../../../observations/forward_operators/obs_def_mod.f90
+ ../../../assimilation_code/modules/observations/obs_kind_mod.f90
+ INPUT obs_def files follow:
+ ../../../observations/forward_operators/obs_def_1d_state_mod.f90
+ INPUT model files follow:
+ preprocess Finished successfully.
+ 
+ --------------------------------------
+ Finished ... at YYYY MM DD HH MM SS = 
+                 2017  8 10 13 16 24
+ Program preprocess
+ --------------------------------------
+ 

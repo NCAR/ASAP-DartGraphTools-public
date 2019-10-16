@@ -1,0 +1,7 @@
+These utilities come from the NIST Network Graph Toolkit ( https://math.nist.gov/~RPozo/ngraph/ngraph_toolkit_index.html )
+
+We just need two:
+ adj2g - converts an 'adjacency' format to a graph format
+ g2mtx - converts a graph format to an mtx format (used by ColPack)
+
+Note that g2mtx has some slight modifications since nigraph.cc doesn't exist ( is replaced by ngraph.h )

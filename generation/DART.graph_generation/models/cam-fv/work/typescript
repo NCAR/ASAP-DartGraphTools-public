@@ -1,0 +1,97 @@
+Script started on Fri 19 Jan 2018 03:35:16 PM MST
+[?1034h[bdobbins@geyser12:~/projects/DART/source/DART.Manhattan/models/cam-fv/work ] $ make
+mpif90 -O3 -assume buffered_io  -I/glade/apps/opt/netcdf/4.3.0/intel/default/include -I/glade/p/work/bdobbins/Projects/DART/source/DART.Manhattan/GPTL  -c	../../../assimilation_code/modules/assimilation/assim_tools_mod.f90
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(73): error #7012: The module file cannot be read.  Its format requires a more recent F90 compiler.   [PERF_MOD]
+use perf_mod
+----^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(92): error #6457: This derived type name has not been declared.   [RANDOM_SEQ_TYPE]
+type (random_seq_type) :: inc_ran_seq
+------^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(95): error #6683: A kind type parameter must be a compile-time constant.   [R8]
+real(r8), allocatable  :: cutoff_list(:)
+-----^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(98): error #6683: A kind type parameter must be a compile-time constant.   [R8]
+real(r8), parameter    :: small = epsilon(1.0_r8)   ! threshold for avoiding NaNs/Inf
+-----^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(98): error #6975: A kind-param must be a digit-string or a scalar-int-constant-name.   [R8]
+real(r8), parameter    :: small = epsilon(1.0_r8)   ! threshold for avoiding NaNs/Inf
+---------------------------------------------^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(108): error #6683: A kind type parameter must be a compile-time constant.   [R8]
+real(r8), allocatable  :: exp_true_correl(:), alpha(:)
+-----^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(112): error #6683: A kind type parameter must be a compile-time constant.   [R8]
+real(r8), allocatable  :: obs_impact_table(:,:)
+-----^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(137): error #6683: A kind type parameter must be a compile-time constant.   [R8]
+real(r8) :: cutoff                          = 0.2_r8
+-----^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(142): error #6683: A kind type parameter must be a compile-time constant.   [R8]
+real(r8) :: adaptive_cutoff_floor           = 0.0_r8
+-----^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(148): error #6683: A kind type parameter must be a compile-time constant.   [R8]
+real(r8)             :: special_localization_cutoffs(MAX_ITEMS)
+-----^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(137): error #6592: This symbol must be a defined parameter, an enumerator, or an argument of an inquiry function that evaluates to a compile-time constant.   [R8]
+real(r8) :: cutoff                          = 0.2_r8
+-------------------------------------------------^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(137): error #6975: A kind-param must be a digit-string or a scalar-int-constant-name.   [R8]
+real(r8) :: cutoff                          = 0.2_r8
+-------------------------------------------------^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(142): error #6592: This symbol must be a defined parameter, an enumerator, or an argument of an inquiry function that evaluates to a compile-time constant.   [R8]
+real(r8) :: adaptive_cutoff_floor           = 0.0_r8
+-------------------------------------------------^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(142): error #6975: A kind-param must be a digit-string or a scalar-int-constant-name.   [R8]
+real(r8) :: adaptive_cutoff_floor           = 0.0_r8
+-------------------------------------------------^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(331): error #6457: This derived type name has not been declared.   [ENSEMBLE_TYPE]
+type(ensemble_type),         intent(inout) :: ens_handle, obs_ens_handle
+-----^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(332): error #6457: This derived type name has not been declared.   [OBS_SEQUENCE_TYPE]
+type(obs_sequence_type),     intent(in)    :: obs_seq
+-----^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(335): error #6457: This derived type name has not been declared.   [ADAPTIVE_INFLATE_TYPE]
+type(adaptive_inflate_type), intent(inout) :: inflate
+-----^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(349): error #6683: A kind type parameter must be a compile-time constant.   [R8]
+real(r8) :: obs_prior(ens_size), obs_inc(ens_size), increment(ens_size)
+-----^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(350): error #6683: A kind type parameter must be a compile-time constant.   [R8]
+real(r8) :: reg_factor, impact_factor
+-----^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(351): error #6683: A kind type parameter must be a compile-time constant.   [R8]
+real(r8) :: net_a(num_groups), reg_coef(num_groups), correl(num_groups)
+-----^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(352): error #6683: A kind type parameter must be a compile-time constant.   [R8]
+real(r8) :: cov_factor, obs(1), obs_err_var, my_inflate, my_inflate_sd
+-----^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(353): error #6683: A kind type parameter must be a compile-time constant.   [R8]
+real(r8) :: varying_ss_inflate, varying_ss_inflate_sd
+-----^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(354): error #6683: A kind type parameter must be a compile-time constant.   [R8]
+real(r8) :: ss_inflate_base, obs_qc, cutoff_rev, cutoff_orig
+-----^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(355): error #6683: A kind type parameter must be a compile-time constant.   [R8]
+real(r8) :: gamma, ens_obs_mean, ens_obs_var, ens_var_deflate
+-----^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(356): error #6683: A kind type parameter must be a compile-time constant.   [R8]
+real(r8) :: r_mean, r_var
+-----^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(357): error #6683: A kind type parameter must be a compile-time constant.   [R8]
+real(r8) :: orig_obs_prior_mean(num_groups), orig_obs_prior_var(num_groups)
+-----^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(358): error #6683: A kind type parameter must be a compile-time constant.   [R8]
+real(r8) :: obs_prior_mean(num_groups), obs_prior_var(num_groups)
+-----^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(359): error #6683: A kind type parameter must be a compile-time constant.   [R8]
+real(r8) :: close_obs_dist(obs_ens_handle%my_num_vars)
+-----^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(359): error #6158: The structure-name is invalid or is missing.
+real(r8) :: close_obs_dist(obs_ens_handle%my_num_vars)
+---------------------------^
+../../../assimilation_code/modules/assimilation/assim_tools_mod.f90(3429): catastrophic error: Too many errors, exiting
+compilation aborted for ../../../assimilation_code/modules/assimilation/assim_tools_mod.f90 (code 1)
+make: *** [assim_tools_mod.o] Error 1
+[bdobbins@geyser12:~/projects/DART/source/DART.Manhattan/models/cam-fv/work ] $ exit
+exit
+
+Script done on Fri 19 Jan 2018 03:35:20 PM MST
