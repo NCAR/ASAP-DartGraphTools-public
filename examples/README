@@ -1,1 +1,2 @@
-This will hold several example runs through the generate->convert->color cycle
+This directory holds an input directory (data needed to generate graphs), an output directory (generated graph files, for use in the GraphDART code) and several cases that generate model-ready output from input files, going through the graph generation -> conversion -> coloring cycle.
+
