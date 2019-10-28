@@ -98,6 +98,12 @@ void general_coloring(int argc, char* argv[]){
                 else {
                     printf("%d\n",g->GetVertexColorCount());
                 }
+              // Modification by bdobbins:
+              std::vector<int> color_list;
+              g->GetVertexColors(color_list);
+              for (auto color : color_list) {
+                std::cout << color << std::endl;
+              }
             }
         }
         delete g;
