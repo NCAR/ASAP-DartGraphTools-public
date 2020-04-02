@@ -1,0 +1,40 @@
+&location_nml
+   horiz_dist_only                 = .true.
+   vert_normalization_pressure     = 100000.0
+   vert_normalization_height       = 10000.0
+   vert_normalization_level        = 20.0
+   vert_normalization_scale_height = 5.0
+   approximate_distance            = .false.
+   nlon                            = 71
+   nlat                            = 36
+   output_box_info                 = .false.
+   print_box_level                 = 0
+   special_vert_normalization_obs_types     = 'null'
+   special_vert_normalization_pressures     = -888888.0
+   special_vert_normalization_heights       = -888888.0
+   special_vert_normalization_levels        = -888888.0
+   special_vert_normalization_scale_heights = -888888.0
+  /
+
+&obs_kind_nml
+   assimilate_these_obs_types          = 'null',
+   evaluate_these_obs_types            = 'null'  
+   use_precomputed_FOs_these_obs_types = 'null'
+/
+
+&ensemble_manager_nml
+   layout                      = 1
+   tasks_per_node              = 1
+   communication_configuration = 1
+   debug                       = .false.
+ /
+
+&utilities_nml
+   TERMLEVEL      = 2
+   logfilename    = 'dart_log.out'
+   nmlfilename    = 'dart_log.nml'
+   module_details = .true.
+   print_debug    = .false.
+   write_nml      = 'file'
+  /
+

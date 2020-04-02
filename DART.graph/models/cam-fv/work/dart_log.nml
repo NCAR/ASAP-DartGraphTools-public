@@ -1,0 +1,105 @@
+ !Starting Program preprocess
+ &UTILITIES_NML
+ TERMLEVEL       =           2,
+ LOGFILENAME     = dart_log.out                                                                                                      
+                                                                                                                                     
+           ,
+ MODULE_DETAILS  = F,
+ NMLFILENAME     = dart_log.nml                                                                                                      
+                                                                                                                                     
+           ,
+ PRINT_DEBUG     = F,
+ WRITE_NML       = file                            
+ /
+ !Finished Program preprocess
+ !Starting Program Filter
+ &UTILITIES_NML
+ TERMLEVEL       =           2,
+ LOGFILENAME     = dart_log.out                                                                                                      
+                                                                                                                                     
+           ,
+ MODULE_DETAILS  = F,
+ NMLFILENAME     = dart_log.nml                                                                                                      
+                                                                                                                                     
+           ,
+ PRINT_DEBUG     = F,
+ WRITE_NML       = file                            
+ /
+ !must edit mpi_utilities/mpi_utilities_mod.f90 to enable this namelist
+ &MPI_UTILITIES_NML
+ REVERSE_TASK_LAYOUT     = F,
+ ALL_TASKS_PRINT = F,
+ VERBOSE = F,
+ ASYNC2_VERBOSE  = F,
+ ASYNC4_VERBOSE  = F,
+ SHELL_NAME      =                                                                                                                   
+                ,
+ SEPARATE_NODE_SYNC      = F,
+ CREATE_LOCAL_COMM       = T,
+ MAKE_COPY_BEFORE_SENDRECV       = F,
+ MAKE_COPY_BEFORE_BROADCAST      = F
+ /
+ &OBS_SEQUENCE_NML
+ WRITE_BINARY_OBS_SEQUENCE       = T,
+ READ_BINARY_FILE_FORMAT = native                          
+ /
+ &MODEL_NML
+ VERT_COORD      = log_invP,
+ MODEL_VERSION   = 4.0                                                                                                               
+               ,
+ CAM_PHIS        = cam_phis.nc                                                                                                       
+               ,
+ STATE_NUM_0D    =           0,
+ STATE_NUM_1D    =           0,
+ STATE_NUM_2D    =           1,
+ STATE_NUM_3D    =           6,
+ STATE_NAMES_0D  =                                                                                                                   
+                                                                                                                                     
+                                                                                                                                     
+                                                                                                                                     
+                                                                                                                                     
+                                                                                                                                     
+                           ,
+ STATE_NAMES_1D  =                                                                                                                   
+                                                                                                                                     
+                                                                                                                                     
+                                                                                                                                     
+                                                                                                                                     
+                                                                                                                                     
+                           ,
+ STATE_NAMES_2D  = PS                                                                                                                
+                                                                                                                                     
+                                                                                                                                     
+                                                                                                                                     
+                                                                                                                                     
+                                                                                                                                     
+                           ,
+ STATE_NAMES_3D  = T       US      VS      Q       CLDLIQ  CLDICE                                                                    
+                                                                                                                                     
+                                                                                                                                     
+                                                                                                                                     
+                                                                                                                                     
+                                                                                                                                     
+                           ,
+ WHICH_VERT_1D   =           0, 99*-888888,
+ WHICH_VERT_2D   =          -1, 99*-888888,
+ WHICH_VERT_3D   = 6*1, 94*-888888,
+ PERT_NAMES      = T                                                                                                                 
+                                                                                                                                     
+                                                                                                                                     
+                                                                                                                                     
+                                                                                                                                     
+                                                                                                                                     
+                           ,
+ PERT_SD =  0.100000000000000     , 99*-888888.000000000       ,
+ PERT_BASE_VALS  = 100*-888888.000000000       ,
+ HIGHEST_OBS_PRESSURE_PA =   1000.00000000000     ,
+ HIGHEST_STATE_PRESSURE_PA       =   9400.00000000000     ,
+ MAX_OBS_LAT_DEGREE      =   90.0000000000000     ,
+ TIME_STEP_SECONDS       =       21600,
+ TIME_STEP_DAYS  =           0,
+ IMPACT_ONLY_SAME_KIND   =                                ,
+ PRINT_DETAILS   = F,
+ MODEL_CONFIG_FILE       = caminput.nc                                                                                               
+                       
+ /
