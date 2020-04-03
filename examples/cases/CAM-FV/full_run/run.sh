@@ -1,10 +1,10 @@
 #!/bin/bash
 #PBS -N example1
 #PBS -A NTDD0004
-#PBS -l walltime=1:00:00
+#PBS -l walltime=3:00:00
 #PBS -q regular
 #PBS -j oe
-#PBS -l select=1:ncpus=36:mpiprocs=1
+#PBS -l select=1:ncpus=36:mpiprocs=36:mem=109G
 
 # Step 1 : Set up the variables to various executables:
 ROOT=../../../../
